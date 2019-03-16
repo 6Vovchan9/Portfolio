@@ -1,11 +1,12 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "Tishenko Vladimir",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"webpack --output ./dist/bundle.js"
+    "build": "webpack --output ./dist/bundle.js",
+    "gulp": "gulp"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,15 @@
     "vue": "^2.6.8"
   },
   "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rm": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgo": "^2.1.0",
+    "node-sass": "^4.11.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   }

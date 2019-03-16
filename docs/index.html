@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <script src="../dist/bundle.js"></script><!-- этот скрипт собран при помощи webpack исходники лежат в папке src там два модуля и их сборщик index.js который потом обрабатывается и превращается в bundle -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <h1>Hello world!</h1>
+    <svg class="salad">
+        <use xlink:href="./sprite.svg#salad"></use>
+    </svg>
+    <svg class="meat">
+        <use xlink:href="./sprite.svg#meat"></use>
+    </svg>
+    <svg class="sauce">
+        <use xlink:href="./sprite.svg#sauce"></use>
+    </svg>
+    <svg class="hand">
+        <use xlink:href="./sprite.svg#hand"></use>
+    </svg>
+    <svg class="logo">
+        <use xlink:href="./sprite.svg#logo"></use>
+    </svg>
+    <script src="./scripts/main/main.js"></script><!-- а этот скрипт собран при помощи gulp -->
+</body>
+</html>
