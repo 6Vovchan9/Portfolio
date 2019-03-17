@@ -2,12 +2,15 @@ const { src, dest, task, series, watch} = require('gulp');
 const rm = require( 'gulp-rm' );
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-// const sassGlob = require('gulp-sass-glob');
+// const sassGlob = require('gulp-sass-glob'); этот плагин нужен для того чтобы поключать все стили через один @import
 const autoprefixer = require('gulp-autoprefixer');
-// const gcmq = require('gulp-group-css-media-queries');
-// const cleanCSS = require('gulp-clean-css');
+// const gcmq = require('gulp-group-css-media-queries'); это плагин группирующий одинаковые медиа запросы
+// const cleanCSS = require('gulp-clean-css'); этот плагин сжимает итоговый проект удаляю отступы в файлах пробелы комментарии
 const svgo = require('gulp-svgo');
 const svgSprite = require('gulp-svg-sprite');
+const sourcemaps = require('gulp-sourcemaps');
+const px2rem = require('gulp-smile-px2rem');
+const babel = require('gulp-babel');
 
 sass.compiler = require('node-sass');
 
@@ -25,17 +28,16 @@ task( 'icons', function () {
                     attrs: "(fill|stroke|style|width|height|data.*)"
                 }
             }
-        ] //этот плагин удаляет атрибуты в скобках
-    })) // этот пайп плагина благодаря ему мы всего лишь создаем новые svg файлы без лишних атрибутов которые в дальнейшем мы будем склеивать в один файл-спрайт
+        ]
+    })) 
     .pipe(svgSprite({
         mode: {
             symbol: {
                 sprite: "../../../sprite.svg"
             }
-        }//режимы например css, defs
+        }
     }))
-    .pipe(dest("./docs/svg/new-icons"))//в предыдущем спрайте сформируется спрайт поэтому этот пайп уже не работает. Если переместить этот пайп пере предыдущем то будет создаваться папка new-icons в которую будут
-    // помещаться обработанные svg файлы но тогда перестанет формироваться спрайт
+    .pipe(dest("./docs/svg/new-icons"))
 })
 
 task( 'clean', function() {
@@ -43,24 +45,32 @@ task( 'clean', function() {
 });
 
 task ('styles', function () {
-    return src(styles) 
+    return src(styles)
+    .pipe(sourcemaps.init())
     .pipe(concat('styles.scss'))
     .pipe(sass().on('error', sass.logError))
+    .pipe(px2rem())
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false 
     }))
+    .pipe(sourcemaps.write())
     .pipe(dest('./docs/css'));
 });
 
 task ('scripts', function () {
     return src('./docs/scripts/*.js')
-    .pipe(concat('main.js', {newLine: ';'})) //newline это символ с которого будет начинаться каждая строчка чтобы не проставлять пере каждым модулей точку с запятой
+    .pipe(sourcemaps.init())
+    .pipe(concat('main.js', {newLine: ';'}))
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
+    .pipe(sourcemaps.write())
     .pipe(dest('./docs/scripts/main'));
 });
 
 watch('./docs/css/*.scss', series('styles'));
-watch('./docs/svg/icons/*.svg', series('icons')); //Пропишем вотчер чтобы если изменилось содержание где лежат файлы svg то перезапустился такс иконс
+watch('./docs/svg/icons/*.svg', series('icons'));
 watch('./docs/scripts/*.js', series('scripts'));
 
 task('default', series('clean', 'styles','scripts','icons'));

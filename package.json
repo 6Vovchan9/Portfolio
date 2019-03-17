@@ -12,16 +12,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.3.1",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-rm": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.9",
+    "gulp-smile-px2rem": "^0.1.0",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgo": "^2.1.0",
     "node-sass": "^4.11.0",
