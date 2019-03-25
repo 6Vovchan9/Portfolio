@@ -1,12 +1,13 @@
 {
-  "name": "portfolio",
+  "name": "assembly",
   "version": "1.0.0",
   "description": "Tishenko Vladimir",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --output ./dist/bundle.js",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "webpack": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +31,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgo": "^2.1.0",
-    "node-sass": "^4.11.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   }

@@ -2,7 +2,7 @@ const { src, dest, task, series, watch} = require('gulp');
 const rm = require( 'gulp-rm' );
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-// const sassGlob = require('gulp-sass-glob'); этот плагин нужен для того чтобы поключать все стили через один @import
+const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 // const gcmq = require('gulp-group-css-media-queries'); это плагин группирующий одинаковые медиа запросы
 // const cleanCSS = require('gulp-clean-css'); этот плагин сжимает итоговый проект удаляю отступы в файлах пробелы комментарии
@@ -16,11 +16,11 @@ sass.compiler = require('node-sass');
 
 const styles = [
     './node_modules/normalize.css/normalize.css',
-    './docs/css/styles.scss'
+    './src/styles/styles.scss'
 ]
 
 task( 'icons', function () {
-    return src('./docs/svg/icons/*.svg')
+    return src('./src/img/svg/icons/*.svg')
     .pipe(svgo({
         plugins: [
             {
@@ -33,21 +33,22 @@ task( 'icons', function () {
     .pipe(svgSprite({
         mode: {
             symbol: {
-                sprite: "../../../sprite.svg"
+                sprite: "../../../../../dist/sprite.svg"
             }
         }
     }))
-    .pipe(dest("./docs/svg/new-icons"))
+    .pipe(dest("./src/img/svg/new-icons"))
 })
 
 task( 'clean', function() {
-  return src( './docs/css/styles.css', { read: false }).pipe( rm() );
+  return src( './dist/*.css', { read: false }).pipe( rm() );
 });
 
 task ('styles', function () {
     return src(styles)
     .pipe(sourcemaps.init())
     .pipe(concat('styles.scss'))
+    .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(px2rem())
     .pipe(autoprefixer({
@@ -55,22 +56,22 @@ task ('styles', function () {
         cascade: false 
     }))
     .pipe(sourcemaps.write())
-    .pipe(dest('./docs/css'));
+    .pipe(dest('./dist'));
 });
 
 task ('scripts', function () {
-    return src('./docs/scripts/*.js')
+    return src('./src/scripts/*.js')
     .pipe(sourcemaps.init())
-    .pipe(concat('main.js', {newLine: ';'}))
+    .pipe(concat('gulp.js', {newLine: ';'}))
     .pipe(babel({
         presets: ['@babel/env']
     }))
     .pipe(sourcemaps.write())
-    .pipe(dest('./docs/scripts/main'));
+    .pipe(dest('./dist'));
 });
 
-watch('./docs/css/*.scss', series('styles'));
-watch('./docs/svg/icons/*.svg', series('icons'));
-watch('./docs/scripts/*.js', series('scripts'));
+watch('./src/styles/*/*.scss', series('styles'));
+watch('./src/img/svg/icons/*.svg', series('icons'));
+watch('./src/scripts/*.js', series('scripts'));
 
 task('default', series('clean', 'styles','scripts','icons'));

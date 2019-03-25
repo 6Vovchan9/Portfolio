@@ -1,0 +1,9 @@
+.sauce {
+    width: 250px;
+    height: 350px;
+    display: block;
+    fill: yellow;
+}
+.hand {
+    @extend.sauce;
+}
