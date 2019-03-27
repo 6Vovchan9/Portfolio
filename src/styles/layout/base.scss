@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    font-family: "Ubuntu", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.wrapper__content {
+    transition: transform 1s;
+    // когжда анимация происходит с масштабными объектами, где много картинок... лучше прописать will-change и то свойство с которым будем производить действие через js
+    // will-change выносит блок которому мы прописали на отдельный композитный слой
+    will-change: transform;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 0 15px;
+}

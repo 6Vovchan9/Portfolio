@@ -1,0 +1,28 @@
+.welcome-section {
+    background-color: gray;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    min-height: 650px;
+}
+ .hero__container {
+    max-width: 950px;
+    flex-direction: column;
+    background-color: red;
+ }
+ .about, .svd {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    min-height: 650px;
+ }
+ .about__container {
+    max-width: 950px;
+    background-color: green;
+ }
+ .svd__container {
+    max-width: 950px;
+    background-color: blue;
+ }

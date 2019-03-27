@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    background-color: gray;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.header__menu {
+    flex: 1;
+}

@@ -50,7 +50,11 @@ task ('styles', function () {
     .pipe(concat('styles.scss'))
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
-    .pipe(px2rem())
+    .pipe(px2rem({
+        dpr: 1,
+        rem: 16,
+        one: false
+    }))
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false 

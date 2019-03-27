@@ -1,0 +1,34 @@
+.social-networks__img {
+    display: flex;
+}
+
+.social-networks__list {
+    display: flex;
+    align-items: center;
+}
+
+.social-networks__item {
+    margin-right: 10px;
+}
+
+.social-networks__item:last-child {
+    margin: 0;
+}
+
+.social-networks__link {
+    font-size: 0;
+    padding: 12px;
+    background-color: yellow;
+    position: relative;
+    display: flex;
+}
+
+.social-networks__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
