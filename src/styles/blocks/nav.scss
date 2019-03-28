@@ -1,4 +1,12 @@
 .nav__list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nav__item {
+    margin-right: 60px;
+
+    &:last-child {
+        margin: 0;
+    }
 }

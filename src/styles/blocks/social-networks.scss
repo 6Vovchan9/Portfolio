@@ -8,16 +8,15 @@
 }
 
 .social-networks__item {
-    margin-right: 10px;
-}
-
-.social-networks__item:last-child {
-    margin: 0;
+    margin-right: 40px;
+    &:last-child {
+        margin: 0;
+    }
 }
 
 .social-networks__link {
     font-size: 0;
-    padding: 12px;
+    padding: 13px 16px;
     background-color: yellow;
     position: relative;
     display: flex;
@@ -25,10 +24,11 @@
 
 .social-networks__icon {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    height: 31px;
     fill: black;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
