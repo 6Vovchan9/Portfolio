@@ -1,0 +1,19 @@
+.triangles {
+    margin-top: -80px;
+    position: relative;
+    height: 80px;
+    background-color: yellow;
+}
+.triangles__item {
+    display: block;
+    width: 50%;
+    position: absolute;
+    height: 100%;
+
+    &--left {
+        left: 0;
+    }
+    &--right {
+        right: 0;
+    }
+}

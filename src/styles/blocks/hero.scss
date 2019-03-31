@@ -10,15 +10,9 @@
     height: 100vh;
     min-height: 650px;
 }
-.hero__container {
-   max-width: 980px;
-   flex-direction: column;
-   background-color: red;
-}
 
 .hero__content {
    flex: 1;
-   background-color: blue;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -28,20 +22,3 @@
    display: flex;
    justify-content: center;
 }
-
-
-
- .about, .svd {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    min-height: 650px;
- }
- .about__container {
-    max-width: 980px;
-    background-color: green;
- }
- .svd__container {
-    max-width: 980px;
-    background-color: blue;
- }

@@ -29,7 +29,7 @@
         <div class="wrapper__content">
             <div class="welcome-section">
                 <section class="hero">
-                    <div class="container hero__container">
+                    <div class="container">
                         <header class="header">
                             <div class="logo">ТВ</div>
                             <div class="header__menu">
@@ -95,16 +95,278 @@
                     </div>
                 </section>
                 <section class="about">
-                    <div class="container about__container">
-                        bg
+                    <div class="container container--row">
+                        <div class="about__left">
+                            <div class="user">
+                                <div class="user__avatar">
+                                    <img src="" alt="" class="user__avatar-pic">
+                                </div>
+                                <div class="user__data">
+                                    <table class="user__data-table">
+                                        <tr class="user__data-row">
+                                            <td class="user__data-cell">Проживаю:</td>
+                                            <td class="user__data-cell">Москва</td>
+                                        </tr>
+                                        <tr class="user__data-row">
+                                            <td class="user__data-cell">Возраст:</td>
+                                            <td class="user__data-cell">25 лет</td>
+                                        </tr>
+                                        <tr class="user__data-row">
+                                            <td class="user__data-cell">Родился:</td>
+                                            <td class="user__data-cell">3 сентября</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about__right">
+                            <div class="about__welcome">Привет, меня зовут</div>
+                            <div class="about__username">Тищенко Владимир</div>
+                            <div class="about__desk">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor itaque sunt odio deserunt perferendis quod possimus, earum illum, corporis nam aliquid officia incidunt nostrum iste in ullam expedita? Fuga, aut?</p>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non dolor reprehenderit, harum quam ratione est exercitationem quas eveniet iste nam quisquam nostrum corporis fugit. Asperiores quae voluptatibus nobis labore expedita.</p>
+                            </div>
+                            <div class="about__ps">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, sed nihil, id ut magni porro architecto perferendis repudiandae facilis repellendus numquam rem aperiam et neque libero. Laboriosam quis delectus aperiam.</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
-            <section class="svd">
-                <div class="container svd__container">
-                    rvf
+            <div class="triangles">
+                <svg viewBox="0 0 1000 100" preserveAspectRatio="none" class="triangles__item triangles__item--left"> <!-- preserveAspectRatio="none" благодаря такому аттрибуту svg-шка будет маштабируемой!! -->
+                    <polygon
+                        points="0 0, 0 100, 1000 100"
+                        fill="black"
+                    />
+                </svg>
+                <svg viewBox="0 0 1000 100" preserveAspectRatio="none" class="triangles__item triangles__item--right">
+                    <polygon
+                        points="0 100, 1000 100, 1000 0"
+                        fill="black"
+                    />
+                </svg>
+            </div>
+            <section class="values">
+                <div class="container">
+                    <div class="values__title">
+                        <h2 class="section-title values__title-text section-title--small">Чем я могу быть полезен вам</h2>
+                        <article class="values__desc">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit reprehenderit atque accusamus. Sit, dicta obcaecati hic sint et architecto reiciendis maxime ea facilis veniam reprehenderit magni voluptatem ipsum vitae beatae.</p>
+                        </article>
+                    </div>
+                    <ul class="user-skills">
+                        <li class="user-skills__item skills-row">
+                            <h3 class="skills-row__title">Front-end</h3>
+                            <ul class="skills-row__list">
+                                <li class="skills-row__item">
+                                    <div class="skill">
+                                        <svg viewBox="0 0 140 140" preserveAspectRatio="none" class="skill__shape">
+                                            <circle class="skill__circle skill__circle--under"></circle>
+                                            <circle class="skill__circle skill__circle--above"></circle>
+                                            <linearGradient id="linearGradient"></linearGradient>
+                                        </svg>
+                                        <div class="skill__title">HTML5</div>
+                                    </div>
+                                </li>
+                                <li class="skills-row__item">
+                                    <div class="skill">
+                                        <svg viewBox="0 0 140 140" class="skill__shape">
+                                            <circle class="skill__circle skill__circle--under"></circle>
+                                            <circle class="skill__circle skill__circle--above"></circle>
+                                            <linearGradient id="linearGradient"></linearGradient>
+                                        </svg>
+                                        <div class="skill__title">CSS3</div>
+                                    </div>
+                                </li>
+                                <li class="skills-row__item">
+                                    <div class="skill">
+                                        <svg viewBox="0 0 140 140" class="skill__shape">
+                                            <circle class="skill__circle skill__circle--under"></circle>
+                                            <circle class="skill__circle skill__circle--above"></circle>
+                                            <linearGradient id="linearGradient"></linearGradient>
+                                        </svg>
+                                        <div class="skill__title">javascript</div>
+                                    </div>
+                                </li>
+                                <li class="skills-row__item">
+                                    <div class="skill">
+                                        <svg viewBox="0 0 140 140" class="skill__shape">
+                                            <circle class="skill__circle skill__circle--under"></circle>
+                                            <circle class="skill__circle skill__circle--above"></circle>
+                                            <linearGradient id="linearGradient"></linearGradient>
+                                        </svg>
+                                        <div class="skill__title">jQuery и Vue.js</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="user-skills__item skills-row">
+                            <h3 class="skills-row__title">Workflow</h3>
+                            <ul class="skills-row__list">
+                                <li class="skills-row__item">
+                                    <div class="skill">
+                                        <svg viewBox="0 0 140 140" preserveAspectRatio="none" class="skill__shape">
+                                            <circle class="skill__circle skill__circle--under"></circle>
+                                            <circle class="skill__circle skill__circle--above"></circle>
+                                            <linearGradient id="linearGradient"></linearGradient>
+                                        </svg>
+                                        <div class="skill__title">Git</div>
+                                    </div>
+                                </li>
+                                <li class="skills-row__item">
+                                    <div class="skill">
+                                        <svg viewBox="0 0 140 140" class="skill__shape">
+                                            <circle class="skill__circle skill__circle--under"></circle>
+                                            <circle class="skill__circle skill__circle--above"></circle>
+                                            <linearGradient id="linearGradient"></linearGradient>
+                                        </svg>
+                                        <div class="skill__title">Gulp</div>
+                                    </div>
+                                </li>
+                                <li class="skills-row__item">
+                                    <div class="skill">
+                                        <svg viewBox="0 0 140 140" class="skill__shape">
+                                            <circle class="skill__circle skill__circle--under"></circle>
+                                            <circle class="skill__circle skill__circle--above"></circle>
+                                            <linearGradient id="linearGradient"></linearGradient>
+                                        </svg>
+                                        <div class="skill__title">Webpack</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </section>
+            <div class="bottom-section">
+                <section class="reviews">
+                    <div class="container">
+                        <div class="reviews__title">
+                            <h2 class="section-title">Что обо мне говорят</h2>
+                            <div class="reviews__slider-controls"></div>
+                        </div>
+                        <ul class="reviews__slider">
+                            <li class="reviews__slider-item">
+                                <div class="quote">
+                                    <article class="quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam officiis delectus reiciendis libero sequi debitis laudantium esse qui consequuntur, facere fugiat consequatur corporis tempora. Sed sit laudantium cupiditate sint quibusdam.</article>
+                                    <div class="quote__author">
+                                        <div class="user user--horizontal">
+                                            <div class="user__avatar">
+                                                <img src="" alt="" class="user__avatar-pic">
+                                            </div>
+                                            <div class="user__data">
+                                                <div class="user__name">Ковальчук Дмитрий</div>
+                                                <div class="user__occ">Основатель Loftschool</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="reviews__slider-item">
+                                <div class="quote">
+                                    <article class="quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam officiis delectus reiciendis libero sequi debitis laudantium esse qui consequuntur, facere fugiat consequatur corporis tempora. Sed sit laudantium cupiditate sint quibusdam.</article>
+                                    <div class="quote__author">
+                                        <div class="user user--horizontal">
+                                            <div class="user__avatar">
+                                                <img src="" alt="" class="user__avatar-pic">
+                                            </div>
+                                            <div class="user__data">
+                                                <div class="user__name">Ковальчук Дмитрий</div>
+                                                <div class="user__occ">Основатель Loftschool</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                        
+                </section>
+                <section class="form">
+                    <div class="container">
+                        kgb
+                    </div>
+                </section>
+            </div>
+            <footer class="footer">
+                <div class="container footer__container container--row">
+                    <div class="footer__copyright">
+                        <div class="copyright">
+                            <div class="copyright__year">2019</div>
+                            <div class="copyright__username">Тищенко Владимир</div>
+                            <div class="copyright__desc">Личный сайт веб-разработчика</div>
+                        </div>
+                    </div>
+                    <div class="footer__data">
+                        <div class="footer__menu">
+                            <nav class="nav nav--color-white">
+                                <ul class="nav__list">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link"> Главная</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Обо мне</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Навыки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Работы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Отзывы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Связаться</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__data-columns">
+                            <div class="footer__data-col">
+                                <article class="footer__text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita veritatis praesentium deserunt harum saepe voluptate. Perferendis labore dolorem, quia ut esse, itaque et dolor ipsam explicabo dignissimos, repudiandae obcaecati.
+                                </article>
+                                <div class="footer__links">
+                                    <ul class="social-networks__list social-networks__list--rounded">
+                                        <li class="social-networks__item">
+                                            <a href="https://vk.com/msk89629083493" class="social-networks__link">
+                                                <svg class="social-networks__icon">
+                                                    <use xlink:href="../dist/sprite.svg#inst"></use>
+                                                </svg>
+                                                <div class="social-networks__name">insta</div>
+                                            </a>
+                                        </li>
+                                        <li class="social-networks__item">
+                                            <a href="https://vk.com/msk89629083493" class="social-networks__link">
+                                                <svg class="social-networks__icon">
+                                                    <use xlink:href="../dist/sprite.svg#inst"></use>
+                                                </svg>
+                                                <div class="social-networks__name">vk</div>
+                                            </a>
+                                        </li>
+                                        <li class="social-networks__item">
+                                            <a href="https://vk.com/msk89629083493" class="social-networks__link">
+                                                <svg class="social-networks__icon">
+                                                    <use xlink:href="../dist/sprite.svg#inst"></use>
+                                                </svg>
+                                                <div class="social-networks__name">github</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer__data-col">
+                                <article class="footer__text">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo quaerat temporibus perferendis ipsum itaque reprehenderit odit necessitatibus culpa! Porro reiciendis nobis minima quibusdam repellendus illum mollitia neque, ratione asperiores.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, doloremque eaque doloribus libero odit id dignissimos debitis officia quidem numquam nisi exercitationem! Fugit quisquam velit aliquid, voluptatibus pariatur quas dolore.</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
     <script src="../dist/gulp.js"></script><!-- а этот скрипт собран при помощи gulp -->

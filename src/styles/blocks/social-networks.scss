@@ -1,10 +1,20 @@
-.social-networks__img {
-    display: flex;
-}
-
 .social-networks__list {
     display: flex;
     align-items: center;
+
+    &--rounded {
+        .social-networks__link {
+            padding: 25px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+    }
+
+    &:hover {
+        .social-networks__icon {
+            fill: green;
+        }
+    }
 }
 
 .social-networks__item {

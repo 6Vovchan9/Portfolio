@@ -1,0 +1,18 @@
+.skill {
+    width: 140px;
+    height: 140px;
+    background-color: red;
+}
+
+.skill__shape {
+    display: block;
+}
+
+.skill__circle {
+    cx: 70;
+    cy: 70;
+    r: 60;
+    stroke-width: 4;
+    stroke: #ccc;
+    fill: transparent;
+}

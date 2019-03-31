@@ -62,5 +62,13 @@ table {
 .container {
     display: flex;
     width: 100%;
+    max-width: 980px;
     margin: 0 15px;
+    flex-direction: column;
+    background-color: blue;
+    border: 1px solid black;
+
+    &--row {
+        flex-direction: row;
+    }
 }
